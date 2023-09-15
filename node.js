@@ -1,2 +1,2 @@
 // node.js file//
-console.log("Hello, this is my Node.js application!");
+console.log("Hello, this is my Node.js!");

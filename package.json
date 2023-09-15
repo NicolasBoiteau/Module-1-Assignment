@@ -2,9 +2,9 @@
     "scripts": {
         "start": "node index.js"
     },
-    "name": "mon-projet",
+    "name": "assignement_1",
     "version": "1.0.0",
-    "description": "Description de mon projet",
+    "description": "first assignement at UCI",
     "main": "index.js",
     
     "author": "nicolas",
