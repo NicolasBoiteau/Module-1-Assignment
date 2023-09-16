@@ -12,7 +12,7 @@ Also i want people to put a grade in every episode to know wich one is their fav
 
 ## Installation
 
-You can find  this _ app and the code at this URL_: https://github.com/NicolasBoiteau/Module-1-Assignment
+You can find  this _app and the code at this URL_ : https://github.com/NicolasBoiteau/Module-1-Assignment
 
 ## Usage
 
