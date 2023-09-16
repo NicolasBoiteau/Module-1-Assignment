@@ -12,12 +12,12 @@ Also i want people to put a grade in every episode to know wich one is their fav
 
 ## Installation
 
-You can find  these app and the code at this URL: https://github.com/NicolasBoiteau/Module-1-Assignment
+You can find  this _ app and the code at this URL_: https://github.com/NicolasBoiteau/Module-1-Assignment
 
 ## Usage
 
 At this point, the project is at is very begining but u can try the first thing :
-"node index.js" 
+"*node index.js*" 
 in the terminal or directly run index.js
 
 ## License

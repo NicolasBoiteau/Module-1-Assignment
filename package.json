@@ -3,6 +3,7 @@
         "start": "node index.js"
     },
     "name": "assignement_1",
+    "type": "module",
     "version": "1.0.0",
     "description": "first assignement at UCI",
     "main": "index.js",
