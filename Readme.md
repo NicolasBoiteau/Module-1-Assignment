@@ -18,6 +18,7 @@ You can find  this _app and the code at this URL_ : https://github.com/NicolasBo
 
 At this point, the project is at is very begining but u can try the first thing :
 "*node index.js*" 
+"*npm start*"
 in the terminal or directly run index.js
 
 ## License
