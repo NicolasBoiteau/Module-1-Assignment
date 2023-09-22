@@ -1,0 +1,17 @@
+.lienass2 {
+    text-align: center;
+}
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+header {
+    text-align: center;
+    background-color: #333;
+    color: #fff; /* Couleur du texte de l'en-tête */
+    padding: 20px 0; /* Espacement intérieur de l'en-tête */
+}
+h1 {
+    margin: 0; /* Supprimer la marge par défaut du titre */
+}
