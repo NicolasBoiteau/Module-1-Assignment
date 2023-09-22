@@ -15,3 +15,6 @@ header {
 h1 {
     margin: 0; /* Supprimer la marge par défaut du titre */
 }
+.result {
+    text-align: center;
+}

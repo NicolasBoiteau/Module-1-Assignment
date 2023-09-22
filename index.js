@@ -22,3 +22,27 @@ app.get('/', (req, res) => {
 app.listen(port, () => {
     console.log(`Serveur en cours d'exécution sur le port ${port}`);
   });
+  // Fonction pour générer une réponse JSON
+function generateResponse(number) {
+    const square = number * number;
+    const cube = number * number * number;
+
+    return {
+        number: number,
+        square: square,
+        cube: cube
+    };
+}
+// Endpoint : "/api/data/:number"
+app.get('/api/data/:number', (req, res) => {
+    // Récupérez le nombre depuis les paramètres de l'URL
+    const number = parseInt(req.params.number);
+
+    // Utilisez une fonction pour générer une réponse JSON
+    const result = generateResponse(number);
+
+    // Envoyez la réponse JSON au client
+    res.json(result);
+});
+module.exports = { generateResponse };
+
