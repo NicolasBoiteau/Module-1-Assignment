@@ -17,44 +17,21 @@
     <a href="https://www.starwars.com/">Visit Star wars official site</a><br>
     <a href="https://www.disney.com/" > Visit Disney's site      </a></div><br><br>
     <img src="/image/sw9.png" alt="photo_star_wars" style="display: block; margin: 0 auto;">
-    <h1>AJAX Example</h1>
-
+    <center><h1>AJAX button Example</h1></center>
+<div class="bouton">
     <button id="fetchData1">Fetch Data 1</button>
     <button id="fetchData2">Fetch Data 2</button>
 
     <div class="result"id="result"></div>
+</div><br><br><br><br><br><br>
+<center><h1>TRY THIS IN THE URL :<br><br>localhost:3500/api/data/X  wtih X a number<br><br> for exemple: <br>localhost:3500/api/data/5</be></h1></center>
+<!-- Ajoutez un champ de saisie (input) -->
+<input type="number" id="userInput" placeholder="Entrez un nombre">
+<button id="fetchData">Fetch Data</button>
 
-    <script>
-        const resultElement = document.getElementById('result');
-
-        // Function to make an AJAX request to the server
-        async function fetchData(url) {
-            try {
-                const response = await fetch(url);
-                if (!response.ok) {
-                    throw new Error(`HTTP error! Status: ${response.status}`);
-                }
-                const data = await response.json();
-                return data;
-            } catch (error) {
-                console.error('Error:', error);
-                return { error: error.message };
-            }
-        }
-
-        // Button 1 click handler
-        document.getElementById('fetchData1').addEventListener('click', async () => {
-            const url = '/api/data/1'; // Endpoint URL with argument
-            const data = await fetchData(url);
-            resultElement.innerHTML = `<p>Data from Button 1: ${JSON.stringify(data)}</p>`;
-        });
-
-        // Button 2 click handler
-        document.getElementById('fetchData2').addEventListener('click', async () => {
-            const url = '/api/data/2'; // Endpoint URL with argument
-            const data = await fetchData(url);
-            resultElement.innerHTML = `<p>Data from Button 2: ${JSON.stringify(data)}</p>`;
-        });
-    </script>
+<!-- Ajoutez un élément pour afficher la réponse -->
+<div id="myResult"></div>
+<script src="/script/client.js"></script>
+<br><br><br><br><br><br><br><br>
 </body>
 </html>
