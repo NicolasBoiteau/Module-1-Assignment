@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Ajouter un film</title>
+</head>
+<body>
+    <h1>Ajouter un film</h1>
+    <form id="film-form">
+        <label for="title">Titre du film :</label>
+        <input type="text" id="title" name="title" required><br><br>
+
+        <label for="release_year">Année de sortie :</label>
+        <input type="number" id="release_year" name="release_year"><br><br>
+
+        <label for="director">Réalisateur :</label>
+        <input type="text" id="director" name="director"><br><br>
+
+        <button type="submit">Ajouter le film</button>
+    </form>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const filmForm = document.getElementById("film-form");
+
+            filmForm.addEventListener("submit", async function(event) {
+                event.preventDefault();
+
+                const formData = new FormData(filmForm);
+                const requestBody = {};
+
+                formData.forEach((value, key) => {
+                    requestBody[key] = value;
+                });
+
+                try {
+                    const response = await fetch("/films", {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json",
+                        },
+                        body: JSON.stringify(requestBody),
+                    });
+
+                    if (response.ok) {
+                        alert("Le film a été ajouté avec succès !");
+                        // Vous pouvez rediriger l'utilisateur vers une autre page ou effectuer une autre action ici
+                    } else {
+                        const data = await response.json();
+                        alert(`Erreur : ${data.error}`);
+                    }
+                } catch (error) {
+                    console.error(error);
+                    alert("Une erreur s'est produite lors de l'ajout du film.");
+                }
+            });
+        });
+    </script>
+</body>
+</html>

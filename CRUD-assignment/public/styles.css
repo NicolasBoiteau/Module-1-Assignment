@@ -1,0 +1,31 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Center vertically in viewport */
+    margin: 0;
+    font-family: 'Wix Madefor Display', sans-serif;
+  }
+  
+  /* Style for the buttons */
+button {
+    margin: 10px;
+    background-color: #008CBA;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    font-family: 'Wix Madefor Display', sans-serif;
+}
+  
+h1 {
+    font-family: 'Wix Madefor Display', sans-serif;
+}
+
+form {
+    text-align: center;
+}

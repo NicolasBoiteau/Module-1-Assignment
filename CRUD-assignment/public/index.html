@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patients App</title>
+    <link rel="stylesheet" href="./styles.css">
+    <!-- Preconnect to Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Import the Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Wix+Madefor+Display:wght@800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1>film star wars App</h1>
+    
+    <h2>Create a New Film</h2>
+    <form id="createfilmstForm">
+        <input type="text" id="title" placeholder="title">
+        <input type="number" id="release_year" placeholder="release_year">
+        <input type="texte" id="director" placeholder="director">
+
+        <button type="submit">Create</button>
+    </form>
+
+    
+      <h2>Update a film</h2>
+      <form id="updatefilmForm">
+          <input type="text" id="filmIdToUpdate" placeholder="film ID to Update">
+          <input type="text" id="updatedtitle" placeholder="Updated title">
+          <input type="text" id="updateddirector" placeholder="Updated director">
+          <input type="number" id="updatedrelease_year" placeholder="updatedrelease_year">
+          <button type="submit">Update</button>
+      </form>
+    <script src="main.js"></script>
+        <!-- Form to input director name -->
+        <form id="searchForm">
+            <label for="directorInput">Nom du Réalisateur :</label>
+            <input type="text" id="directorInput" placeholder="Entrez le nom du réalisateur" required>
+            <button type="submit">Rechercher</button>
+        </form>
+    
+        <!-- Display films in a list -->
+        <ul id="filmList">
+        </ul>
+        <h2>Delete a Film</h2>
+        <form id="deleteFilmForm">
+            <input type="text" id="filmIdToDelete" placeholder="Film ID to Delete">
+            <button type="submit">Delete</button>
+        </form>
+        
+        <script>
+            const searchForm = document.getElementById('searchForm');
+const directorInput = document.getElementById('directorInput');
+const filmList = document.getElementById('filmList');
+
+searchForm.addEventListener('submit', async (e) => {
+  e.preventDefault();
+
+  // Récupérer la valeur du champ "director" du formulaire
+  const director = directorInput.value;
+
+  // Faire une requête GET pour récupérer les films du réalisateur spécifié
+  try {
+    const response = await fetch(`/films?director=${encodeURIComponent(director)}`);
+
+    if (response.ok) {
+      // Si la réponse est OK, convertir la réponse en JSON
+      const films = await response.json();
+
+      // Afficher les films dans une liste ou une autre partie de votre page
+      filmList.innerHTML = ''; // Effacer la liste précédente (si nécessaire)
+
+      films.forEach((film) => {
+        const listItem = document.createElement('li');
+        listItem.textContent = `${film.title} (${film.release_year})`;
+        filmList.appendChild(listItem);
+      });
+    } else {
+      console.error('Failed to retrieve films.');
+    }
+  } catch (error) {
+    console.error('Error:', error);
+  }
+});
+        </script>
+</body>
+</html>
